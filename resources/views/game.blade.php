@@ -10,8 +10,32 @@
 </head>
 <body class="bg-gray-900">
 
-    <div id="game">
+    <!-- Using AlpineJs -->
 
-    </div>
+    <main x-data = "game"
+        @keyup.window="onKeyPress($event.key)">
+
+        <h2 aria-label="Wordle">
+            <!-- <img src="/images/logo.svg" alt=""> -->
+        </h2>
+
+        <div id="game" >
+            <!-- <input type="text" x-model="this.guessesAllowed"> -->
+            <template x-for="(row, index) in board">
+                <div class="row" :class="{'current' : currentRowIndex === index, 'invalid' : currentRowIndex === index && errors}">
+
+                    <template x-for="tile in row">
+                        <div class="tile" :class="tile.status" x-text="tile.letter">
+
+                        </div>
+                    </template>
+
+                </div>
+            </template>
+        </div>
+
+        <output x-text="message"></output>
+
+    </main>
 </body>
 </html>
