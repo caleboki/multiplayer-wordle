@@ -43,6 +43,8 @@ export default {
     },
 
     onKeyPress(key) {
+        if (this.state === 'complete') location.reload()
+
         this.message = ''
         this.errors = false
 
@@ -89,12 +91,13 @@ export default {
 
         if (this.currentGuess === this.theWord) {
             this.state = 'complete'
-            return this.message = 'You win'
+            this.message = `You win! Press any key to play again. Score:${this.currentScore}`
+            return this.message
         }
 
         if(this.remainingGuesses === 0) {
             this.state = 'complete'
-            return this.message = 'Game Over. You Lose'
+            return this.message = 'Game Over! You Lose. Press any key to play again. Score:0'
 
         }
 

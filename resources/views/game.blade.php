@@ -11,16 +11,12 @@
 <body class="bg-gray-900">
 
     <!-- Using AlpineJs -->
-
     <main x-data = "game"
         @keyup.window="onKeyPress($event.key)">
-
-        <h2 aria-label="Wordle">
-            <!-- <img src="/images/logo.svg" alt=""> -->
-        </h2>
+        <!-- <h1 x-text="'Current row index: ' + currentRowIndex"></h1> -->
+        <h1>Wordle</h1>
 
         <div id="game" >
-            <!-- <input type="text" x-model="this.guessesAllowed"> -->
             <template x-for="(row, index) in board">
                 <div class="row" :class="{'current' : currentRowIndex === index, 'invalid' : currentRowIndex === index && errors}">
 
@@ -36,6 +32,26 @@
 
         <output x-text="message"></output>
 
+         <!-- Keyboard -->
+        <div id="keyboard" @click.stop="$event.target.matches('button') && onKeyPress($event.target.textContent)">
+
+            <template x-for="row in letters">
+                <div class="row">
+                    <template x-for="key in row">
+                        <button
+                            class="key"
+                            :class="matchingTileForKey(key)?.status"
+                            type="button"
+                            x-text="key">
+                        </button>
+                    </template>
+                </div>
+            </template>
+
+        </div>
+
     </main>
+
+
 </body>
 </html>

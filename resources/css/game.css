@@ -1,3 +1,10 @@
+:root {
+    --correct-color: #47d747;
+    --present-color: #f7f749;
+    --absent-color: #888;
+    --invalid-color: #ff3f3f;
+}
+
 html, body {
     height: 100%;
 }
@@ -118,7 +125,7 @@ output {
     margin-top: 1rem;
     position: absolute;
     top: 0;
-    right: -1.5rem;
+    right: 1.5rem;
     width: 150px;
 }
 
