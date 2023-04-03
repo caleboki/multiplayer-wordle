@@ -1,4 +1,21 @@
-export let theWords = ["aimed", "abate", "bocks", "basis", "cited", "dated", "conky", "dopas", "exams", "flaky", "sunna"]
+export let theWords = [
+    "aimed",
+    "abate",
+    "bocks",
+    "basis",
+    "cited",
+    "dated",
+    "conky",
+    "dopas",
+    "exams",
+    "excel",
+    "exeat",
+    "execs",
+    "exeem",
+    "exeme",
+    "flaky",
+    "sunna"
+]
 //export let theWords = ["exams"]
 export let allWords = [
     "AAHED",
