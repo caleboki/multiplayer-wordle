@@ -10,8 +10,12 @@ html, body {
 }
 
 body {
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center; /* center horizontally */
+    align-items: center; /* center vertically */
+    height: 100vh;
+
+    /* place-items: center; */
     background-color: #0e1626;
     color: white;
     margin: 0;
@@ -132,4 +136,13 @@ output {
 output:empty {
     display: none;
     color: #496e9e;
+}
+
+#leaderboard {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+#leaderboard {
+    color: white;
 }

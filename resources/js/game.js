@@ -77,7 +77,7 @@ export default {
         }
     },
 
-    submitGuess() {
+    async submitGuess() {
         if (this.currentGuess.length < this.theWord.length) return
 
         if (!allWords.includes(this.currentGuess.toUpperCase())) {
@@ -89,9 +89,31 @@ export default {
 
         this.currentScore = this.remainingGuesses + 1
 
-        if (this.currentGuess === this.theWord) {
+        if (this.currentGuess === this.theWord && this.state !== 'complete') {
             this.state = 'complete'
             this.message = `You win! Press any key to play again. Score:${this.currentScore}`
+            const data = {
+                score: this.currentScore,
+                _token: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            }
+
+            try {
+                const response = await fetch('/api/scores', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+
+                if (response.ok) {
+                    console.log('Score saved successfully')
+                } else {
+                    console.log('Error saving score')
+                }
+            } catch (error) {
+                console.log('Error saving score:', error.message)
+            }
             return this.message
         }
 

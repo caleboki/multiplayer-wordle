@@ -27,7 +27,7 @@ use Inertia\Inertia;
 
 Route::get('/game', function () {
     return view('Game');
-})->middleware(['auth', 'verified']);
+})->middleware(['auth', 'verified'])->name('game');
 
 Route::get('/', function () {
     return redirect('/dashboard');
