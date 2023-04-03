@@ -26,7 +26,7 @@ use Inertia\Inertia;
 // });
 
 Route::get('/game', function () {
-    return view('Game');
+    return view('game');
 })->middleware(['auth', 'verified'])->name('game');
 
 Route::get('/', function () {
