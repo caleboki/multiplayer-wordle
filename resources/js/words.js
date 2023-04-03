@@ -1,5 +1,5 @@
-//export let theWords = ["aimed", "bocks", "conky", "dopas", "exams", "flaky", "sunna"]
-export let theWords = ["exams"]
+export let theWords = ["aimed", "abate", "bocks", "conky", "dopas", "exams", "flaky", "sunna"]
+//export let theWords = ["exams"]
 export let allWords = [
     "AAHED",
     "AALII",
