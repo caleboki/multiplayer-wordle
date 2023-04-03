@@ -24,14 +24,6 @@ fetch('/api/scores')
       <h2 class="font-semibold text-xl text-gray-800 leading-tight text-white">Leaderboard</h2>
     </template>
 
-    <!-- <div class="flex justify-center mb-8">
-            <inertia-link
-                href="/game"
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            >
-                Start Playing
-            </inertia-link>
-    </div> -->
     <div class="flex justify-center mt-4">
         <a
             href="/game"
